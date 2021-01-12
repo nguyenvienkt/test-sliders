@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Sliders = (props) => {
+const Sliders = () => {
   const slides = [
     {
       title: "Today's workout plan",
@@ -23,22 +23,8 @@ const Sliders = (props) => {
       text: "You made it, have a nice day and see you next time!",
     },
   ];
-  // const { slides } = props;
-  let pageNumber = [];
-  for (var i = 0; i < slides.length; i++) {
-    pageNumber.push(i);
-  }
-
-  // pageNumber.map((item, index) => {
-  //   return (
-  //     <ul>
-  //       <li>{item + 1}</li>
-  //     </ul>
-  //   );
-  // });
 
   const [slide, setSlide] = useState(0);
-  const [isShow, setIsShow] = useState(false);
 
   const nextSlide = () => {
     setSlide(slide + 1);
@@ -48,38 +34,40 @@ const Sliders = (props) => {
   };
   return (
     <div>
-      <h1>Sliders</h1>
-      <div className="sliders">
-        <h3>{slides[slide].title}</h3>
-        <p>{slides[slide].text}</p>
-      </div>
+      <div className="container">
+        <h1>Sliders</h1>
+        <div className="sliders">
+          <h3>{slides[slide].title}</h3>
+          <p>{slides[slide].text}</p>
+        </div>
 
-      <div className="controls">
-        <button
-          className="btn"
-          onClick={() => {
-            setSlide(0);
-          }}
-        >
-          Restart
-        </button>
+        <div className="controls">
+          <button
+            className="btn"
+            onClick={() => {
+              setSlide(0);
+            }}
+          >
+            Restart
+          </button>
 
-        <button
-          onClick={() => {
-            previousSlide();
-          }}
-          className={"btn " + (slide === 0 ? "disable" : "")}
-        >
-          Previous
-        </button>
-        <button
-          onClick={() => {
-            nextSlide();
-          }}
-          className={"btn " + (slide === slides.length - 1 ? "disable" : "")}
-        >
-          Next
-        </button>
+          <button
+            onClick={() => {
+              previousSlide();
+            }}
+            className={"btn " + (slide === 0 ? "disable" : "")}
+          >
+            Previous
+          </button>
+          <button
+            onClick={() => {
+              nextSlide();
+            }}
+            className={"btn " + (slide === slides.length - 1 ? "disable" : "")}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
