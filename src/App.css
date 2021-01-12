@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap");
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-bar {
+  height: 60px;
+  background: lightblue;
+  color: #222;
+  padding: 0 10px;
+  margin: 0 auto 30px auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-bar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-bar ul li {
+  margin: 0 10px;
+  cursor: pointer;
+  color: darkmagenta;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.nav-bar ul li:hover {
+  background: #fff;
+  color: darkmagenta;
+  transition: all 0.3s ease;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: darkmagenta;
+  color: #fff;
+  border: none;
+  margin: 0 10px;
+  outline: none;
+  cursor: pointer;
+}
+.sliders {
+}
+
+.controls {
+  margin: 0 auto;
+}
+
+.controls .disable {
+  cursor: none;
+  pointer-events: none;
+  background: #c3c3c3;
+  color: #222;
 }
